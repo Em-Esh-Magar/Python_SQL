@@ -9,12 +9,20 @@ mydb = mysql.connector.connect(
 
 cursor = mydb.cursor()
 
+
+
+
 query = "Insert into Students (name,age,address) values(%s,%s,%s)"
 value = [("Ram",23,"Goldhunga"),
          ("Raju",22,"KTM"),
          ("Hari",34,"Pokhara"),
          ("Shyam",33,"KTM")
-        ]
+]
+
+
+# For single insert
+# value = ("Em Esh",20,"Goldhunga")
+# cursor.execute(query,value)
 
 cursor.executemany(query,value)
 
